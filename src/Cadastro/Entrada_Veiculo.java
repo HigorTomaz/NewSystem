@@ -8,6 +8,8 @@ import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.JOptionPane;
 
 /**
@@ -15,13 +17,20 @@ import javax.swing.JOptionPane;
  * @author Higor
  */
 public class Entrada_Veiculo extends javax.swing.JDialog {
-
+    Date dt = new Date();
     /**
      * Creates new form Serviço
      */
     public Entrada_Veiculo(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+     jTHora.setText(new SimpleDateFormat("HH:mm").format(new Date(System.currentTimeMillis())));
+     jTDataEntrada.setText(new SimpleDateFormat("dd/MM/yyyy").format(new Date(System.currentTimeMillis())));
+     
+    }
+
+    public Entrada_Veiculo() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**
@@ -33,8 +42,6 @@ public class Entrada_Veiculo extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel4 = new javax.swing.JPanel();
-        lbID = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
@@ -47,7 +54,9 @@ public class Entrada_Veiculo extends javax.swing.JDialog {
         jLabel19 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox();
         jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        jTDataEntrada = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jTValor = new javax.swing.JTextField();
         jBAcessar2 = new javax.swing.JButton();
         jBAcessar1 = new javax.swing.JButton();
         jBAcessar = new javax.swing.JButton();
@@ -55,44 +64,37 @@ public class Entrada_Veiculo extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Saída de Veiculo");
 
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Código"));
-
-        lbID.setText("[ ID ]");
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lbID, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lbID, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE)
-        );
-
         jPanel9.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Entrada"));
 
         jLabel17.setText("Placa:");
 
         jLabel15.setText("Data/Entrada");
 
+        jTHora.setEditable(false);
         jTHora.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getTimeInstance(java.text.DateFormat.SHORT))));
-        jTHora.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
         jLabel18.setText("Hora/Entrada");
 
         jLabel16.setText("Grupo:");
 
         jCGrupo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selecione o Modelo", "Moto", "Veiculo Leve", "Veiculo Pesado" }));
+        jCGrupo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCGrupoActionPerformed(evt);
+            }
+        });
 
         jLabel14.setText("Nome do Veículo:");
 
         jLabel19.setText("Mensalista:");
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "  ", "Sim", "Não" }));
+
+        jTDataEntrada.setEditable(false);
+
+        jLabel1.setText("Valor a Pagar:");
+
+        jTValor.setEditable(false);
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -110,7 +112,7 @@ public class Entrada_Veiculo extends javax.swing.JDialog {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel15)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField2))
+                                .addComponent(jTDataEntrada))
                             .addGroup(jPanel9Layout.createSequentialGroup()
                                 .addComponent(jLabel16)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -130,6 +132,10 @@ public class Entrada_Veiculo extends javax.swing.JDialog {
                         .addComponent(jLabel19)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTValor, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel9Layout.setVerticalGroup(
@@ -141,7 +147,7 @@ public class Entrada_Veiculo extends javax.swing.JDialog {
                     .addComponent(jTHora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel18)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTDataEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -152,7 +158,9 @@ public class Entrada_Veiculo extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel19)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1)
+                    .addComponent(jTValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(25, 25, 25))
         );
 
@@ -171,42 +179,42 @@ public class Entrada_Veiculo extends javax.swing.JDialog {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(244, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jBAcessar1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jBAcessar2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jBAcessar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(24, 24, 24)
                 .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jBAcessar1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jBAcessar2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jBAcessar1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jBAcessar, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(74, Short.MAX_VALUE))
+                .addContainerGap(53, Short.MAX_VALUE))
         );
 
-        java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-577)/2, (screenSize.height-411)/2, 577, 411);
+        setSize(new java.awt.Dimension(793, 326));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBAcessar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAcessar1ActionPerformed
         salvar();
     }//GEN-LAST:event_jBAcessar1ActionPerformed
+
+    private void jCGrupoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCGrupoActionPerformed
+       tipo();
+    }//GEN-LAST:event_jCGrupoActionPerformed
 
 
     public void salvar(){
@@ -217,12 +225,12 @@ public class Entrada_Veiculo extends javax.swing.JDialog {
             + "values(?,?,?,?,?,?)";
         PreparedStatement stmp = (PreparedStatement) con.prepareStatement(query);
         stmp.setString(1, jTextField1.getText());
-        stmp.setString(2, jTextField2.getText());
+        stmp.setString(2, jTDataEntrada.getText());
         stmp.setString(3, jTHora.getText());
         stmp.setString(4, jCGrupo.getSelectedItem().toString());
         stmp.setString(5, jTNome.getText());
         stmp.setString(6, jComboBox1.getSelectedItem().toString());
-        
+        stmp.setString(7, jTValor.getText());
         stmp.executeUpdate();
         JOptionPane.showMessageDialog(null,"CADASTRADO");
         stmp.close();
@@ -233,7 +241,17 @@ public class Entrada_Veiculo extends javax.swing.JDialog {
     }catch(SQLException e){
         JOptionPane.showMessageDialog(null,"ERRO DE SQL"+e);
     }}
-    
+    public void tipo(){
+    if(jCGrupo.getSelectedItem().toString() =="Moto"){
+    jTValor.setText("25,00");
+    }
+    if(jCGrupo.getSelectedItem().toString() =="Veiculo Leve"){
+    jTValor.setText("25,00");
+    }
+    if(jCGrupo.getSelectedItem().toString() =="Veiculo Pesado"){
+    jTValor.setText("25,00");
+    }
+    }
     
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -279,18 +297,18 @@ public class Entrada_Veiculo extends javax.swing.JDialog {
     private javax.swing.JButton jBAcessar2;
     private javax.swing.JComboBox jCGrupo;
     private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JTextField jTDataEntrada;
     private javax.swing.JFormattedTextField jTHora;
     private javax.swing.JTextField jTNome;
+    private javax.swing.JTextField jTValor;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JLabel lbID;
     // End of variables declaration//GEN-END:variables
 }

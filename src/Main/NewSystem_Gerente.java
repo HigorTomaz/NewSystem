@@ -4,6 +4,10 @@
  */
 package Main;
 
+import Cadastro.Cliente_Mensalista;
+import Cadastro.Entrada_Veiculo;
+import Cadastro.Saida_Veiculo;
+
 /**
  *
  * @author Higor
@@ -27,11 +31,11 @@ public class NewSystem_Gerente extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jBAcessar1 = new javax.swing.JButton();
-        jBAcessar2 = new javax.swing.JButton();
-        jBAcessar3 = new javax.swing.JButton();
-        jBAcessar4 = new javax.swing.JButton();
-        jBAcessar5 = new javax.swing.JButton();
+        jBEntrada = new javax.swing.JButton();
+        jBSaida = new javax.swing.JButton();
+        jBCaixa = new javax.swing.JButton();
+        jBCliente = new javax.swing.JButton();
+        jBSair = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem7 = new javax.swing.JMenuItem();
@@ -50,15 +54,40 @@ public class NewSystem_Gerente extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jBAcessar1.setText("Entra V");
+        jBEntrada.setText("Entra V");
+        jBEntrada.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBEntradaActionPerformed(evt);
+            }
+        });
 
-        jBAcessar2.setText("Saida V");
+        jBSaida.setText("Saida V");
+        jBSaida.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBSaidaActionPerformed(evt);
+            }
+        });
 
-        jBAcessar3.setText("Caixa");
+        jBCaixa.setText("Caixa");
+        jBCaixa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBCaixaActionPerformed(evt);
+            }
+        });
 
-        jBAcessar4.setText("Add  Cliente");
+        jBCliente.setText("Add  Cliente");
+        jBCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBClienteActionPerformed(evt);
+            }
+        });
 
-        jBAcessar5.setText("Sair");
+        jBSair.setText("Sair");
+        jBSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBSairActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -66,15 +95,15 @@ public class NewSystem_Gerente extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jBAcessar1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jBEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jBAcessar2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jBSaida, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jBAcessar3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jBCaixa, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jBAcessar4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jBCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 114, Short.MAX_VALUE)
-                .addComponent(jBAcessar5, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jBSair, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -82,11 +111,11 @@ public class NewSystem_Gerente extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jBAcessar1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jBAcessar2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jBAcessar3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jBAcessar4, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jBAcessar5, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jBEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jBSaida, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jBCaixa, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jBCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jBSair, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -156,13 +185,36 @@ public class NewSystem_Gerente extends javax.swing.JFrame {
                 .addGap(0, 260, Short.MAX_VALUE))
         );
 
-        java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-618)/2, (screenSize.height-422)/2, 618, 422);
+        setSize(new java.awt.Dimension(618, 422));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jBSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSairActionPerformed
+    System.exit(0);
+    }//GEN-LAST:event_jBSairActionPerformed
+
+    private void jBEntradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBEntradaActionPerformed
+        Entrada_Veiculo e = new Entrada_Veiculo();
+        e.setVisible(true);
+    }//GEN-LAST:event_jBEntradaActionPerformed
+
+    private void jBSaidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSaidaActionPerformed
+      Saida_Veiculo s = new Saida_Veiculo();
+      s.setVisible(true);
+    }//GEN-LAST:event_jBSaidaActionPerformed
+
+    private void jBCaixaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCaixaActionPerformed
+        
+    }//GEN-LAST:event_jBCaixaActionPerformed
+
+    private void jBClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBClienteActionPerformed
+        Cliente_Mensalista c = new Cliente_Mensalista();
+        c.setVisible(true);
+    }//GEN-LAST:event_jBClienteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -199,11 +251,11 @@ public class NewSystem_Gerente extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jBAcessar1;
-    private javax.swing.JButton jBAcessar2;
-    private javax.swing.JButton jBAcessar3;
-    private javax.swing.JButton jBAcessar4;
-    private javax.swing.JButton jBAcessar5;
+    private javax.swing.JButton jBCaixa;
+    private javax.swing.JButton jBCliente;
+    private javax.swing.JButton jBEntrada;
+    private javax.swing.JButton jBSaida;
+    private javax.swing.JButton jBSair;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;

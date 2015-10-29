@@ -133,15 +133,15 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jBAcessar1" min="-2" pref="90" max="-2" attributes="0"/>
+                  <Component id="jBEntrada" min="-2" pref="90" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jBAcessar2" min="-2" pref="90" max="-2" attributes="0"/>
+                  <Component id="jBSaida" min="-2" pref="90" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jBAcessar3" min="-2" pref="90" max="-2" attributes="0"/>
+                  <Component id="jBCaixa" min="-2" pref="90" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jBAcessar4" min="-2" pref="90" max="-2" attributes="0"/>
+                  <Component id="jBCliente" min="-2" pref="90" max="-2" attributes="0"/>
                   <EmptySpace pref="114" max="32767" attributes="0"/>
-                  <Component id="jBAcessar5" min="-2" pref="90" max="-2" attributes="0"/>
+                  <Component id="jBSair" min="-2" pref="90" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -151,11 +151,11 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jBAcessar1" alignment="3" min="-2" pref="80" max="-2" attributes="0"/>
-                      <Component id="jBAcessar2" alignment="3" min="-2" pref="80" max="-2" attributes="0"/>
-                      <Component id="jBAcessar3" alignment="3" min="-2" pref="80" max="-2" attributes="0"/>
-                      <Component id="jBAcessar4" alignment="3" min="-2" pref="80" max="-2" attributes="0"/>
-                      <Component id="jBAcessar5" alignment="3" min="-2" pref="80" max="-2" attributes="0"/>
+                      <Component id="jBEntrada" alignment="3" min="-2" pref="80" max="-2" attributes="0"/>
+                      <Component id="jBSaida" alignment="3" min="-2" pref="80" max="-2" attributes="0"/>
+                      <Component id="jBCaixa" alignment="3" min="-2" pref="80" max="-2" attributes="0"/>
+                      <Component id="jBCliente" alignment="3" min="-2" pref="80" max="-2" attributes="0"/>
+                      <Component id="jBSair" alignment="3" min="-2" pref="80" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -163,30 +163,45 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="jBAcessar1">
+        <Component class="javax.swing.JButton" name="jBEntrada">
           <Properties>
             <Property name="text" type="java.lang.String" value="Entra V"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBEntradaActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jBAcessar2">
+        <Component class="javax.swing.JButton" name="jBSaida">
           <Properties>
             <Property name="text" type="java.lang.String" value="Saida V"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBSaidaActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jBAcessar3">
+        <Component class="javax.swing.JButton" name="jBCaixa">
           <Properties>
             <Property name="text" type="java.lang.String" value="Caixa"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBCaixaActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jBAcessar4">
+        <Component class="javax.swing.JButton" name="jBCliente">
           <Properties>
             <Property name="text" type="java.lang.String" value="Add  Cliente"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBClienteActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jBAcessar5">
+        <Component class="javax.swing.JButton" name="jBSair">
           <Properties>
             <Property name="text" type="java.lang.String" value="Sair"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBSairActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
