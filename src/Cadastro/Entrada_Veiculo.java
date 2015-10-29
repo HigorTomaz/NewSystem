@@ -221,8 +221,8 @@ public class Entrada_Veiculo extends javax.swing.JDialog {
     try{
     Class.forName("com.mysql.jdbc.Driver");
     Connection con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost/tcc","root","root");
-    String query = "Insert into Entrada_Veiculo(placa,data,hora,grupo,nome,tipo) "
-            + "values(?,?,?,?,?,?)";
+    String query = "Insert into Entrada_Veiculo(placa,data,hora,grupo,nome,tipo,valor) "
+            + "values(?,?,?,?,?,?,?)";
         PreparedStatement stmp = (PreparedStatement) con.prepareStatement(query);
         stmp.setString(1, jTextField1.getText());
         stmp.setString(2, jTDataEntrada.getText());
@@ -232,7 +232,7 @@ public class Entrada_Veiculo extends javax.swing.JDialog {
         stmp.setString(6, jComboBox1.getSelectedItem().toString());
         stmp.setString(7, jTValor.getText());
         stmp.executeUpdate();
-        JOptionPane.showMessageDialog(null,"CADASTRADO");
+        JOptionPane.showMessageDialog(null,"Entrada de Veiculo cadastrado!","Entrada de Veiculo",JOptionPane.INFORMATION_MESSAGE);
         stmp.close();
         con.close();
         
@@ -241,15 +241,16 @@ public class Entrada_Veiculo extends javax.swing.JDialog {
     }catch(SQLException e){
         JOptionPane.showMessageDialog(null,"ERRO DE SQL"+e);
     }}
+    
     public void tipo(){
     if(jCGrupo.getSelectedItem().toString() =="Moto"){
     jTValor.setText("25,00");
     }
     if(jCGrupo.getSelectedItem().toString() =="Veiculo Leve"){
-    jTValor.setText("25,00");
+    jTValor.setText("40,00");
     }
     if(jCGrupo.getSelectedItem().toString() =="Veiculo Pesado"){
-    jTValor.setText("25,00");
+    jTValor.setText("60,00");
     }
     }
     

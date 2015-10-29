@@ -514,7 +514,6 @@ JOptionPane.showMessageDialog(null, "DRIVER NÃO ENCONTRADO" +EX);
  JOptionPane.showMessageDialog(null, "ERRO DE GRAVAÇÃO"+E);
       } }
     
-   
     private void selecao (){
            
         
