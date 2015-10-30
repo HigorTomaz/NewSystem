@@ -223,6 +223,11 @@ public class Funcionario extends javax.swing.JDialog {
         );
 
         jBAcessar.setText("Cancelar");
+        jBAcessar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBAcessarActionPerformed(evt);
+            }
+        });
 
         jBAcessar1.setText("Salvar");
         jBAcessar1.addActionListener(new java.awt.event.ActionListener() {
@@ -232,6 +237,11 @@ public class Funcionario extends javax.swing.JDialog {
         });
 
         jBAcessar2.setText("Limpar");
+        jBAcessar2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBAcessar2ActionPerformed(evt);
+            }
+        });
 
         jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Contrato"));
 
@@ -310,6 +320,25 @@ public class Funcionario extends javax.swing.JDialog {
         salvarfuncionario();
       
     }//GEN-LAST:event_jBAcessar1ActionPerformed
+
+    private void jBAcessarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAcessarActionPerformed
+        dispose();
+    }//GEN-LAST:event_jBAcessarActionPerformed
+
+    private void jBAcessar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAcessar2ActionPerformed
+        jTBairro.setText("");
+        jTCPF.setText("");
+        jTCep.setText("");
+        jTDataAdmissao.setText("");
+        jTEmail.setText("");
+        jTEndereco.setText("");
+        jTLogin.setText("");
+        jTNascimento.setText("");
+        jTNome.setText("");
+        jTNumero.setText("");
+        jTRG.setText("");
+        jTSalario.setText("");
+    }//GEN-LAST:event_jBAcessar2ActionPerformed
 
 
    public void salvarfuncionario(){

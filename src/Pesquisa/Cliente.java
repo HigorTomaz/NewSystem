@@ -38,27 +38,27 @@ public class Cliente extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
         jLabel28 = new javax.swing.JLabel();
-        jTNome = new javax.swing.JTextField();
+        jTNome6 = new javax.swing.JTextField();
         jLabel29 = new javax.swing.JLabel();
-        jTBairro = new javax.swing.JTextField();
+        jTBairro6 = new javax.swing.JTextField();
         jLabel30 = new javax.swing.JLabel();
-        jTNumero = new javax.swing.JTextField();
+        jTNumero6 = new javax.swing.JTextField();
         jLabel31 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
         jLabel57 = new javax.swing.JLabel();
-        jTCep = new javax.swing.JTextField();
+        jTCep6 = new javax.swing.JTextField();
         jLabel58 = new javax.swing.JLabel();
-        jTEndereco = new javax.swing.JTextField();
+        jTEndereco6 = new javax.swing.JTextField();
         jLabel59 = new javax.swing.JLabel();
-        jTRg = new javax.swing.JTextField();
-        jTCpf = new javax.swing.JTextField();
-        jTTelefone = new javax.swing.JTextField();
+        jTRg7 = new javax.swing.JTextField();
+        jTCpf7 = new javax.swing.JTextField();
+        jTTelefone7 = new javax.swing.JTextField();
         jPanel12 = new javax.swing.JPanel();
         jLabel60 = new javax.swing.JLabel();
         jLabel61 = new javax.swing.JLabel();
         jLabel62 = new javax.swing.JLabel();
         jTVeiculo = new javax.swing.JTextField();
-        jTGrupo = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
         jTPlaca = new javax.swing.JTextField();
         jPanel14 = new javax.swing.JPanel();
         jLabel63 = new javax.swing.JLabel();
@@ -105,37 +105,37 @@ public class Cliente extends javax.swing.JFrame {
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addComponent(jLabel28)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTNome))
+                        .addComponent(jTNome6))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
                         .addComponent(jLabel57)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTCep, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTCep6, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel58)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTEndereco))
+                        .addComponent(jTEndereco6))
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel9Layout.createSequentialGroup()
                                 .addComponent(jLabel29)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTBairro6, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel30)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jTNumero6, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel9Layout.createSequentialGroup()
                                 .addComponent(jLabel32)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTCpf7, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(61, 61, 61)
                                 .addComponent(jLabel59)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jTTelefone7, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel31)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTRg, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jTRg7, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(0, 76, Short.MAX_VALUE))
         );
         jPanel9Layout.setVerticalGroup(
@@ -144,27 +144,27 @@ public class Cliente extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel28)
-                    .addComponent(jTNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTNome6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel57)
                     .addComponent(jLabel58)
-                    .addComponent(jTEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTCep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTEndereco6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTCep6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel29)
-                    .addComponent(jTBairro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTBairro6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel30)
-                    .addComponent(jTNumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTNumero6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel31)
-                    .addComponent(jTRg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTRg7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel32)
                     .addComponent(jLabel59)
-                    .addComponent(jTCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTCpf7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTTelefone7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(14, Short.MAX_VALUE))
         );
 
@@ -188,7 +188,7 @@ public class Cliente extends javax.swing.JFrame {
                 .addGap(17, 17, 17)
                 .addComponent(jLabel62)
                 .addGap(18, 18, 18)
-                .addComponent(jTGrupo, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+                .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel60)
                 .addGap(151, 151, 151))
@@ -206,7 +206,7 @@ public class Cliente extends javax.swing.JFrame {
                     .addComponent(jLabel62)
                     .addComponent(jLabel61)
                     .addComponent(jLabel60)
-                    .addComponent(jTGrupo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTPlaca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(18, Short.MAX_VALUE))
             .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -392,8 +392,8 @@ public class Cliente extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        setSize(new java.awt.Dimension(1251, 457));
-        setLocationRelativeTo(null);
+        java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
+        setBounds((screenSize.width-1251)/2, (screenSize.height-457)/2, 1251, 457);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
@@ -402,23 +402,23 @@ public class Cliente extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 
-     alterar();
+     //   alterar();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
       jTextField1.setText(" ");
       jTValor.setText(" ");
-      jTVeiculo.setText(" ");
-      jTGrupo.setText(" ");
-      jTPlaca.setText(" ");
-      jTCep.setText(" ");
-      jTBairro.setText(" ");
-      jTNumero.setText(" ");
-      jTEndereco.setText(" ");
-      jTTelefone.setText (" ");
-      jTNome.setText(" ");
-      jTRg.setText(" ");
-      jTCpf.setText(" ");
+    jTVeiculo.setText(" ");
+      jTextField2.setText(" ");
+//          jTPlaca.setText(" ");
+//      jTCep.setText(" ");
+//        jTBairro.setText(" ");
+//            jTNumero.setText(" ");
+//         jTEndereco.setText(" ");
+//           jTTelefone.setText (" ");
+//             jTNome.setText(" ");
+//             jTRg.setText(" ");
+//             jTCpf.setText(" ");
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -434,46 +434,48 @@ public class Cliente extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
-        selecao();
+    //selecao();
     }//GEN-LAST:event_jTable1MouseClicked
 
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
-
+        // TODO add your handling code here:
     }//GEN-LAST:event_jTextField3ActionPerformed
 
     
-//    private void pesquisaravulso (){
-//        try{
-//              Class.forName("com.mysql.jdbc.Driver");
-//       Connection con = DriverManager.getConnection   
-//               ("jdbc:mysql://localhost/tcc","root","root");
-//       
-//       String query = "select * from c_avulso where nome like?";
-//        PreparedStatement stmp = con.prepareStatement (query);
-//        
-//        stmp.setString(1,"%"+jTextField1.getText()+"%");
-//        ResultSet rs =  stmp.executeQuery();
-//        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-//        model.setNumRows(0);
-//        
-//        while(rs.next()){
-//            model.addRow(new Object[]{
-//            
-//         
-//                rs.getString("nome"),
-//                rs.getString("rg"),    
-//                rs.getString("telefone"),
-//                rs.getString("placa"),
-//                rs.getString("grupo"),
-//                rs.getString("veiculo"), 
-//            });}
-//           
-//        
-//} catch(ClassNotFoundException EX){
-//JOptionPane.showMessageDialog(null, "DRIVER NÃO ENCONTRADO" +EX);
-//            } catch(SQLException E) {
-// JOptionPane.showMessageDialog(null, "ERRO DE GRAVAÇÃO"+E);
-//      } }
+    private void pesquisaravulso (){
+        try{
+              Class.forName("com.mysql.jdbc.Driver");
+       Connection con = DriverManager.getConnection   
+               ("jdbc:mysql://localhost/tcc","root","root");
+       
+       String query = "select * from c_avulso where nome like?";
+        PreparedStatement stmp = con.prepareStatement (query);
+        
+        stmp.setString(1,"%"+jTextField1.getText()+"%");
+        ResultSet rs =  stmp.executeQuery();
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        model.setNumRows(0);
+        
+        while(rs.next()){
+            model.addRow(new Object[]{
+            
+         
+                rs.getString("nome"),
+                rs.getString("rg"),    
+                rs.getString("telefone"),
+                rs.getString("placa"),
+                rs.getString("grupo"),
+                rs.getString("veiculo"),
+          
+              
+            });}
+           
+        
+} catch(ClassNotFoundException EX){
+JOptionPane.showMessageDialog(null, "DRIVER NÃO ENCONTRADO" +EX);
+            } catch(SQLException E) {
+ JOptionPane.showMessageDialog(null, "ERRO DE GRAVAÇÃO"+E);
+      } }
    
     private void pesquisarmensal (){
         try{
@@ -488,6 +490,7 @@ public class Cliente extends javax.swing.JFrame {
         ResultSet rs =  stmp.executeQuery();
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
         model.setNumRows(0);
+        
         while(rs.next()){
             model.addRow(new Object[]{
             
@@ -513,89 +516,88 @@ JOptionPane.showMessageDialog(null, "DRIVER NÃO ENCONTRADO" +EX);
             } catch(SQLException E) {
  JOptionPane.showMessageDialog(null, "ERRO DE GRAVAÇÃO"+E);
       } }
-    
-    private void selecao (){
-           
-        
-            int row = jTable1.getSelectedRow();
-           String table_click =(jTable1.getModel().getValueAt(row,0).toString());
-                      
-           try{
-           Class.forName("com.mysql.jdbc.Driver");
-           Connection conexao = DriverManager.getConnection
-                   ("jdbc:mysql://localhost/tcc","root","root");
-           String query = "Select * from c_mensal where nome ='"+table_click+"'";
-           ResultSet rs;
-           PreparedStatement pst= conexao.prepareStatement(query);
-           rs=pst.executeQuery();
-             while(rs.next()){
-                      String add1= rs.getString("nome");
-                      jTNome.setText(add1);
-                      String add2= rs.getString("rg");
-                      jTRg.setText(add2);
-                      String add3= rs.getString("cpf");
-                     jTCpf.setText(add3); 
-                      String add4= rs.getString("celular");
-                      jTTelefone.setText(add4);
-                      String add5= rs.getString("endereco");
-                     jTEndereco.setText(add5);
-                      String add6= rs.getString("numero");
-                      jTNumero.setText(add6);
-                      String add7= rs.getString("bairro");
-                      jTBairro.setText(add7);
-                       String add8= rs.getString("cep");
-                      jTCep.setText(add8);
-                       String add9= rs.getString("placa");
-                      jTPlaca.setText(add9);
-                       String add10= rs.getString("grupo");
-                      jTGrupo.setText(add10);
-                       String add11= rs.getString("veiculo");
-                      jTVeiculo.setText(add11);
-                       String add12= rs.getString("valor");
-                      jTValor.setText(add12);
-                      String add13= rs.getString("vencimento");
-                      jTextField1.setText(add13);
-                     
-                      
-             }
-           } catch (SQLException e) {JOptionPane.showMessageDialog(null,"ERRO DE SQL " +e);
-           } catch (ClassNotFoundException ex){
-               JOptionPane.showMessageDialog(null,"driver não encontrado"+ ex);
-           }}
-    
    
-     private void alterar(){
-    try{
-             Class.forName("com.mysql.jdbc.Driver");
-             Connection com = DriverManager.getConnection
-                 ("jdbc:mysql://localhost/tcc","root","root");
-
-             String query = "update c_mensal set nome='"+ jTextField1.getText()+"',"
-                      + "cep='"+jTCep.getText()+"', "
-                      + "endereco='"+jTEndereco.getText()+"',"
-                      + "bairro='"+jTBairro.getText()+"', "
-                      + "numero='"+jTNumero.getText()+"', "
-                      + "rg='"+jTRg.getText()+"', "
-                      + "cpf='"+jTCpf.getText()+"', "
-                      + "telefone='"+jTTelefone.getText()+"',"
-                      + "placa='"+jTPlaca.getText()+"', "
-                      + "grupo='"+jTGrupo.getText()+"', "
-                      + "veiculo='"+jTVeiculo.getText()+"', "
-                      + "valor='"+jTValor.getText()+"' "
-                      + "where vencimento='"+jTextField3.getText()+"' ";
-
-             PreparedStatement alterar = com.prepareStatement(query);
-             alterar.executeUpdate();
-             JOptionPane.showMessageDialog(null,"DADOS ALTERADOS");
-             alterar.close();
-             com.close();
-         }catch(ClassNotFoundException ES){
-             JOptionPane.showMessageDialog(null,"erro de driver" +ES);
-         }catch(SQLException E){
-            JOptionPane.showMessageDialog(null,"ERRO DE SQL"+E);
-
-         }
-     }
+//    private void selecao (){
+//           
+//        
+//            int row = jTable1.getSelectedRow();
+//           String table_click =(jTable1.getModel().getValueAt(row,0).toString());
+//                      
+//           try{
+//           Class.forName("com.mysql.jdbc.Driver");
+//           Connection conexao = DriverManager.getConnection
+//                   ("jdbc:mysql://localhost/tcc","root","root");
+//           String query = "Select * from c_mensal where nome ='"+table_click+"'";
+//           ResultSet rs;
+//           PreparedStatement pst= conexao.prepareStatement(query);
+//           rs=pst.executeQuery();
+//             while(rs.next()){
+//                      String add1= rs.getString("nome");
+//                      jTNome.setText(add1);
+//                      String add2= rs.getString("rg");
+//                      jTRg.setText(add2);
+//                      String add3= rs.getString("cpf");
+//                     jTCpf.setText(add3); 
+//                      String add4= rs.getString("celular");
+//                      jTTelefone.setText(add4);
+//                      String add5= rs.getString("endereco");
+//                     jTEndereco.setText(add5);
+//                      String add6= rs.getString("numero");
+//                      jTNumero.setText(add6);
+//                      String add7= rs.getString("bairro");
+//                      jTBairro.setText(add7);
+//                       String add8= rs.getString("cep");
+//                      jTCep.setText(add8);
+//                       String add9= rs.getString("placa");
+//                      jTPlaca.setText(add9);
+//                       String add10= rs.getString("grupo");
+//                      jTextField2.setText(add10);
+//                       String add11= rs.getString("veiculo");
+//                      jTVeiculo.setText(add11);
+//                       String add12= rs.getString("valor");
+//                      jTValor.setText(add12);
+//                      String add13= rs.getString("vencimento");
+//                      jTextField1.setText(add13);
+//                     
+//                      
+//             }
+//           } catch (SQLException e) {JOptionPane.showMessageDialog(null,"ERRO DE SQL " +e);
+//           } catch (ClassNotFoundException ex){
+//               JOptionPane.showMessageDialog(null,"driver não encontrado"+ ex);
+//           }}
+//    
+    
+//     private void alterar(){
+//    try{
+//             Class.forName("com.mysql.jdbc.Driver");
+//             Connection com = DriverManager.getConnection
+//                 ("jdbc:mysql://localhost/tcc","root","root");
+//
+//             String query = "update c_mensal set nome='"+ jTNome.getText()+"',"
+//                   + "rg='"+jTRg.getText()+"', "
+//                      + "cpf='"+jTCpf.getText()+"', "
+//                      + "celular='"+jTTelefone.getText()+"',"
+//                      + "endereco='"+jTEndereco.getText()+"',"
+//                      + "bairro='"+jTBairro.getText()+"', "
+//                      + "cep='"+jTCep.getText()+"', "
+//                      + "placa='"+jTPlaca.getText()+"', "
+//                      + "grupo='"+jTextField2.getText()+"', "
+//                      + "veiculo='"+jTVeiculo.getText()+"', "
+//                      + "valor='"+jTValor.getText()+"' "
+//                      + "where vencimento='"+jTextField1.getText()+"' ";
+//
+//             PreparedStatement alterar = com.prepareStatement(query);
+//             alterar.executeUpdate();
+//             JOptionPane.showMessageDialog(null,"DADOS ALTERADOS");
+//             alterar.close();
+//             com.close();
+//         }catch(ClassNotFoundException ES){
+//             JOptionPane.showMessageDialog(null,"erro de driver" +ES);
+//         }catch(SQLException E){
+//             JOptionPane.showMessageDialog(null,"ERRO DE SQL"+E);
+//
+//         }
+//     }
     private void excluir(){
              
          try{
@@ -617,8 +619,6 @@ JOptionPane.showMessageDialog(null, "DRIVER NÃO ENCONTRADO" +EX);
             } catch(SQLException E) {
  JOptionPane.showMessageDialog(null, "ERRO DE GRAVAÇÃO"+E);
       } }
-    
-    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -676,20 +676,20 @@ JOptionPane.showMessageDialog(null, "DRIVER NÃO ENCONTRADO" +EX);
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTBairro;
-    private javax.swing.JTextField jTCep;
-    private javax.swing.JTextField jTCpf;
-    private javax.swing.JTextField jTEndereco;
-    private javax.swing.JTextField jTGrupo;
-    private javax.swing.JTextField jTNome;
-    private javax.swing.JTextField jTNumero;
+    private javax.swing.JTextField jTBairro6;
+    private javax.swing.JTextField jTCep6;
+    private javax.swing.JTextField jTCpf7;
+    private javax.swing.JTextField jTEndereco6;
+    private javax.swing.JTextField jTNome6;
+    private javax.swing.JTextField jTNumero6;
     private javax.swing.JTextField jTPlaca;
-    private javax.swing.JTextField jTRg;
-    private javax.swing.JTextField jTTelefone;
+    private javax.swing.JTextField jTRg7;
+    private javax.swing.JTextField jTTelefone7;
     private javax.swing.JTextField jTValor;
     private javax.swing.JTextField jTVeiculo;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
 }

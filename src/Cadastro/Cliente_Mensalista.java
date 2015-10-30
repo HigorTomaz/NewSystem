@@ -323,8 +323,7 @@ public class Cliente_Mensalista extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSairActionPerformed
-      Main m  = new Main();
-      System.exit(m.CLOSED);
+      dispose();
     }//GEN-LAST:event_jBSairActionPerformed
 
     private void jBSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSalvarActionPerformed
@@ -332,7 +331,19 @@ public class Cliente_Mensalista extends javax.swing.JDialog {
     }//GEN-LAST:event_jBSalvarActionPerformed
 
     private void jBLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBLimparActionPerformed
-        // TODO add your handling code here:
+        jTNome.setText("");
+        jTCep.setText("");
+        jTEndereco.setText("");
+        jTBairro.setText("");
+        jTNumero.setText("");
+        jTRg.setText("");
+        jTCpf.setText("");
+        jTTelefone.setText("");
+        jTPlaca.setText("");
+        jCGrupo.setSelectedIndex(0);
+        jTNome.setText("");
+        jTValor.setText("");
+        jTVencimento.setText("");
     }//GEN-LAST:event_jBLimparActionPerformed
 
 

@@ -4,6 +4,7 @@
  */
 package Cadastro;
 
+import Main.Main;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -18,18 +19,18 @@ import javax.swing.table.DefaultTableModel;
  */
 public class Saida_Veiculo extends javax.swing.JDialog {
 
-    /**
-     * Creates new form Saida_Veiculo
-     */
+     double troco;
     public Saida_Veiculo(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        pesquisar();
     }
 
     public Saida_Veiculo() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+  
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -40,12 +41,12 @@ public class Saida_Veiculo extends javax.swing.JDialog {
     private void initComponents() {
 
         jPanel10 = new javax.swing.JPanel();
-        jLabel28 = new javax.swing.JLabel();
+        jLresultado = new javax.swing.JLabel();
         jBAcessar = new javax.swing.JButton();
         jBAcessar2 = new javax.swing.JButton();
         jBAcessar1 = new javax.swing.JButton();
         jPanel11 = new javax.swing.JPanel();
-        jLabel27 = new javax.swing.JLabel();
+        jLValor = new javax.swing.JLabel();
         jPanel12 = new javax.swing.JPanel();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
@@ -65,33 +66,44 @@ public class Saida_Veiculo extends javax.swing.JDialog {
         jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Saída de Veículo");
 
         jPanel10.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Troco"));
 
-        jLabel28.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel28.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel28.setText("[TROCO]");
+        jLresultado.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLresultado.setForeground(new java.awt.Color(204, 0, 0));
+        jLresultado.setText("[TROCO]");
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel10Layout.createSequentialGroup()
-                .addGap(223, 223, 223)
-                .addComponent(jLabel28)
-                .addContainerGap(196, Short.MAX_VALUE))
+                .addGap(204, 204, 204)
+                .addComponent(jLresultado)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel10Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel28)
+                .addComponent(jLresultado)
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
         jBAcessar.setText("Cancelar");
+        jBAcessar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBAcessarActionPerformed(evt);
+            }
+        });
 
         jBAcessar2.setText("Limpar");
+        jBAcessar2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBAcessar2ActionPerformed(evt);
+            }
+        });
 
         jBAcessar1.setText("Salvar");
         jBAcessar1.addActionListener(new java.awt.event.ActionListener() {
@@ -102,8 +114,8 @@ public class Saida_Veiculo extends javax.swing.JDialog {
 
         jPanel11.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Total a Pagar"));
 
-        jLabel27.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel27.setText("[TOTAL A PAGAR]");
+        jLValor.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLValor.setText("[TOTAL A PAGAR]");
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
@@ -111,14 +123,14 @@ public class Saida_Veiculo extends javax.swing.JDialog {
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel11Layout.createSequentialGroup()
                 .addGap(190, 190, 190)
-                .addComponent(jLabel27)
-                .addContainerGap(166, Short.MAX_VALUE))
+                .addComponent(jLValor)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel11Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel27)
+                .addComponent(jLValor)
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
@@ -128,6 +140,7 @@ public class Saida_Veiculo extends javax.swing.JDialog {
 
         jLabel21.setText("Data/Entrada:");
 
+        jTHora.setEditable(false);
         jTHora.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getTimeInstance(java.text.DateFormat.SHORT))));
         jTHora.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
@@ -137,15 +150,25 @@ public class Saida_Veiculo extends javax.swing.JDialog {
 
         jLabel24.setText("Nome do Veículo:");
 
-        jLabel25.setText("Mensalista:");
-
-        jTPlaca.addKeyListener(new java.awt.event.KeyAdapter() {
+        jTValorRecebido.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                jTPlacaKeyReleased(evt);
+                jTValorRecebidoKeyReleased(evt);
             }
         });
 
+        jLabel25.setText("Mensalista:");
+
+        jTPlaca.setEditable(false);
+
+        jTData.setEditable(false);
+
         jLabel26.setText("Valor Recebido:");
+
+        jTNome.setEditable(false);
+
+        jTGrupo.setEditable(false);
+
+        jTMensalista.setEditable(false);
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);
@@ -239,24 +262,23 @@ public class Saida_Veiculo extends javax.swing.JDialog {
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jBAcessar1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jBAcessar2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jBAcessar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jPanel10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jBAcessar1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jBAcessar2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jBAcessar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -268,26 +290,41 @@ public class Saida_Veiculo extends javax.swing.JDialog {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jBAcessar1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jBAcessar2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jBAcessar, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap(146, Short.MAX_VALUE))
+                            .addComponent(jBAcessar, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
 
-        setSize(new java.awt.Dimension(851, 623));
+        setSize(new java.awt.Dimension(851, 535));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBAcessar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAcessar1ActionPerformed
-       
+       salvar();
     }//GEN-LAST:event_jBAcessar1ActionPerformed
-
-    private void jTPlacaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTPlacaKeyReleased
-        pesquisar();
-    }//GEN-LAST:event_jTPlacaKeyReleased
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         selecao();
     }//GEN-LAST:event_jTable1MouseClicked
+
+    private void jBAcessarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAcessarActionPerformed
+     dispose();
+    }//GEN-LAST:event_jBAcessarActionPerformed
+
+    private void jTValorRecebidoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTValorRecebidoKeyReleased
+        troco();
+    }//GEN-LAST:event_jTValorRecebidoKeyReleased
+
+    private void jBAcessar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAcessar2ActionPerformed
+       jTData.setText("");
+       jTGrupo.setText("");
+       jTHora.setText("");
+       jTMensalista.setText("");
+       jTNome.setText("");
+       jTValorRecebido.setText("");
+       jTPlaca.setText("");
+       jLValor.setText("[TOTAL A PAGAR]");
+       jLresultado.setText("[TROCO]");
+    }//GEN-LAST:event_jBAcessar2ActionPerformed
 
     private void pesquisar (){
         try{
@@ -348,13 +385,62 @@ public class Saida_Veiculo extends javax.swing.JDialog {
                       jTGrupo.setText(add5);
                       String add6= rs.getString("tipo");
                       jTMensalista.setText(add6);
+                      String add7= rs.getString("valor");
+                      jLValor.setText(add7);
                       
+                  troco = Double.valueOf(add7).doubleValue();
+                  
+                  
              }
            } catch (SQLException e) {JOptionPane.showMessageDialog(null,"ERRO DE SQL " +e);
            } catch (ClassNotFoundException ex){
                JOptionPane.showMessageDialog(null,"driver não encontrado"+ ex);
            }
     }
+    public void troco(){
+       
+      if(jTValorRecebido.getText().isEmpty()){
+           jLresultado.setText("[TROCO]");
+      }else{
+          
+           try{
+            double recebe =  Double.parseDouble(jTValorRecebido.getText());
+            double resultado = recebe - troco;
+            String r1 = Double.toString(resultado);
+            jLresultado.setText(r1);
+        }
+        catch(Exception ex){
+            System.out.println(ex);
+        }
+      }
+   }
+    
+    public void salvar(){
+    try{
+    Class.forName("com.mysql.jdbc.Driver");
+    Connection con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost/tcc","root","root");
+    String query = "Insert into Saida_Veiculo(placa,data,hora,grupo,nome,tipo,valorrecebido,valor,resultado) "
+            + "values(?,?,?,?,?,?,?,?,?)";
+        PreparedStatement stmp = (PreparedStatement) con.prepareStatement(query);
+        stmp.setString(1, jTPlaca.getText());
+        stmp.setString(2, jTData.getText());
+        stmp.setString(3, jTHora.getText());
+        stmp.setString(4, jTGrupo.getText());
+        stmp.setString(5, jTNome.getText());
+        stmp.setString(6, jTMensalista.getText());
+        stmp.setString(7, jTValorRecebido.getText());
+        stmp.setString(8, jLValor.getText());
+        stmp.setString(9, jLresultado.getText());
+        stmp.executeUpdate();
+        JOptionPane.showMessageDialog(null,"Entrada de Veiculo cadastrado!","Entrada de Veiculo",JOptionPane.INFORMATION_MESSAGE);
+        stmp.close();
+        con.close();
+        
+    }catch(ClassNotFoundException ex){
+        JOptionPane.showMessageDialog(null,"ERRO DE DRIVER"+ex);
+    }catch(SQLException e){
+        JOptionPane.showMessageDialog(null,"ERRO DE SQL"+e);
+    }}
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -397,6 +483,7 @@ public class Saida_Veiculo extends javax.swing.JDialog {
     private javax.swing.JButton jBAcessar;
     private javax.swing.JButton jBAcessar1;
     private javax.swing.JButton jBAcessar2;
+    private javax.swing.JLabel jLValor;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
@@ -404,8 +491,7 @@ public class Saida_Veiculo extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLresultado;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;

@@ -51,8 +51,6 @@ public class Entrada_Veiculo extends javax.swing.JDialog {
         jCGrupo = new javax.swing.JComboBox();
         jLabel14 = new javax.swing.JLabel();
         jTNome = new javax.swing.JTextField();
-        jLabel19 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox();
         jTextField1 = new javax.swing.JTextField();
         jTDataEntrada = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
@@ -62,7 +60,7 @@ public class Entrada_Veiculo extends javax.swing.JDialog {
         jBAcessar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Saída de Veiculo");
+        setTitle("Entrada de Veiculo");
 
         jPanel9.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Entrada"));
 
@@ -85,10 +83,6 @@ public class Entrada_Veiculo extends javax.swing.JDialog {
         });
 
         jLabel14.setText("Nome do Veículo:");
-
-        jLabel19.setText("Mensalista:");
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "  ", "Sim", "Não" }));
 
         jTDataEntrada.setEditable(false);
 
@@ -129,12 +123,8 @@ public class Entrada_Veiculo extends javax.swing.JDialog {
                                 .addComponent(jTNome, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE)))
                         .addGap(16, 16, 16))
                     .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addComponent(jLabel19)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
                         .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jTValor, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
@@ -149,22 +139,24 @@ public class Entrada_Veiculo extends javax.swing.JDialog {
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTDataEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jCGrupo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel14)
-                        .addComponent(jTNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel16))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel19)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jCGrupo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel14)
+                    .addComponent(jTNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel16))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jTValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25))
+                .addGap(28, 28, 28))
         );
 
         jBAcessar2.setText("Limpar");
+        jBAcessar2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBAcessar2ActionPerformed(evt);
+            }
+        });
 
         jBAcessar1.setText("Salvar");
         jBAcessar1.addActionListener(new java.awt.event.ActionListener() {
@@ -174,6 +166,11 @@ public class Entrada_Veiculo extends javax.swing.JDialog {
         });
 
         jBAcessar.setText("Cancelar");
+        jBAcessar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBAcessarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -201,10 +198,10 @@ public class Entrada_Veiculo extends javax.swing.JDialog {
                     .addComponent(jBAcessar2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jBAcessar1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jBAcessar, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(53, Short.MAX_VALUE))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
-        setSize(new java.awt.Dimension(793, 326));
+        setSize(new java.awt.Dimension(793, 310));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -216,12 +213,27 @@ public class Entrada_Veiculo extends javax.swing.JDialog {
        tipo();
     }//GEN-LAST:event_jCGrupoActionPerformed
 
+    private void jBAcessarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAcessarActionPerformed
+        dispose();
+    }//GEN-LAST:event_jBAcessarActionPerformed
+
+    private void jBAcessar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAcessar2ActionPerformed
+        
+        jTextField1.setText("");
+        jTDataEntrada.setText("");
+        jTHora.setText("");
+        jCGrupo.setSelectedIndex(0);
+        jTNome.setText("");
+        jTValor.setText("");
+        
+    }//GEN-LAST:event_jBAcessar2ActionPerformed
+
 
     public void salvar(){
     try{
     Class.forName("com.mysql.jdbc.Driver");
     Connection con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost/tcc","root","root");
-    String query = "Insert into Entrada_Veiculo(placa,data,hora,grupo,nome,tipo,valor) "
+    String query = "Insert into entrada_veiculo(placa,data,hora,grupo,nome,valor) "
             + "values(?,?,?,?,?,?,?)";
         PreparedStatement stmp = (PreparedStatement) con.prepareStatement(query);
         stmp.setString(1, jTextField1.getText());
@@ -229,7 +241,6 @@ public class Entrada_Veiculo extends javax.swing.JDialog {
         stmp.setString(3, jTHora.getText());
         stmp.setString(4, jCGrupo.getSelectedItem().toString());
         stmp.setString(5, jTNome.getText());
-        stmp.setString(6, jComboBox1.getSelectedItem().toString());
         stmp.setString(7, jTValor.getText());
         stmp.executeUpdate();
         JOptionPane.showMessageDialog(null,"Entrada de Veiculo cadastrado!","Entrada de Veiculo",JOptionPane.INFORMATION_MESSAGE);
@@ -297,14 +308,12 @@ public class Entrada_Veiculo extends javax.swing.JDialog {
     private javax.swing.JButton jBAcessar1;
     private javax.swing.JButton jBAcessar2;
     private javax.swing.JComboBox jCGrupo;
-    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JTextField jTDataEntrada;
     private javax.swing.JFormattedTextField jTHora;

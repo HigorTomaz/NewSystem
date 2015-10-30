@@ -7,6 +7,10 @@ package Main;
 import Cadastro.Cliente_Mensalista;
 import Cadastro.Entrada_Veiculo;
 import Cadastro.Saida_Veiculo;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -19,6 +23,7 @@ public class NewSystem_Gerente extends javax.swing.JFrame {
      */
     public NewSystem_Gerente() {
         initComponents();
+        setExtendedState(MAXIMIZED_BOTH);
     }
 
     /**
@@ -38,21 +43,27 @@ public class NewSystem_Gerente extends javax.swing.JFrame {
         jBSair = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem7 = new javax.swing.JMenuItem();
-        jMenuItem8 = new javax.swing.JMenuItem();
-        jMenuItem9 = new javax.swing.JMenuItem();
+        ClienteMensalista_ = new javax.swing.JMenuItem();
+        Funcionario_ = new javax.swing.JMenuItem();
+        Gerente = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
+        EntradaVeiculo_ = new javax.swing.JMenuItem();
+        SaidaVeiculo_ = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
-        jMenu4 = new javax.swing.JMenu();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenu5 = new javax.swing.JMenu();
+        ConsultarClienteMensalista_ = new javax.swing.JMenuItem();
+        ConsultarFuncionario = new javax.swing.JMenuItem();
+        ConsultarGerente = new javax.swing.JMenuItem();
+        ConsultarLogin_ = new javax.swing.JMenuItem();
         jMenu6 = new javax.swing.JMenu();
+        RelatorioMensal_ = new javax.swing.JMenuItem();
+        RelatorioAvulso_ = new javax.swing.JMenuItem();
+        jMenu5 = new javax.swing.JMenu();
+        AbrirCalc = new javax.swing.JMenuItem();
+        AbrirBlocoNotas_ = new javax.swing.JMenuItem();
+        MenuSAIR = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("NewSystem - Gerente");
 
         jBEntrada.setText("Entra V");
         jBEntrada.addActionListener(new java.awt.event.ActionListener() {
@@ -102,7 +113,7 @@ public class NewSystem_Gerente extends javax.swing.JFrame {
                 .addComponent(jBCaixa, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jBCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 114, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 291, Short.MAX_VALUE)
                 .addComponent(jBSair, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -121,54 +132,135 @@ public class NewSystem_Gerente extends javax.swing.JFrame {
 
         jMenu1.setText("Cadastrar");
 
-        jMenuItem7.setText("Cliente Mensalista");
-        jMenu1.add(jMenuItem7);
+        ClienteMensalista_.setText("Cliente Mensalista");
+        ClienteMensalista_.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ClienteMensalista_ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(ClienteMensalista_);
 
-        jMenuItem8.setText("Funcionário");
-        jMenu1.add(jMenuItem8);
+        Funcionario_.setText("Funcionário");
+        Funcionario_.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Funcionario_ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(Funcionario_);
 
-        jMenuItem9.setText("Serviço");
-        jMenu1.add(jMenuItem9);
+        Gerente.setText("Gerente");
+        Gerente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GerenteActionPerformed(evt);
+            }
+        });
+        jMenu1.add(Gerente);
 
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Lançamentos");
 
-        jMenuItem5.setText("Entrada de Veiculo");
-        jMenu2.add(jMenuItem5);
+        EntradaVeiculo_.setText("Entrada de Veiculo");
+        EntradaVeiculo_.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EntradaVeiculo_ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(EntradaVeiculo_);
 
-        jMenuItem6.setText("Saída de Veiculo");
-        jMenu2.add(jMenuItem6);
+        SaidaVeiculo_.setText("Saída de Veiculo");
+        SaidaVeiculo_.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SaidaVeiculo_ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(SaidaVeiculo_);
 
         jMenuBar1.add(jMenu2);
 
-        jMenu3.setText("Sistema");
+        jMenu3.setText("Consultar");
 
-        jMenu4.setText("Consulta");
-
-        jMenuItem4.setText("Cliente Mensalista");
-        jMenu4.add(jMenuItem4);
-
-        jMenuItem1.setText("Funcionário");
-        jMenu4.add(jMenuItem1);
-
-        jMenuItem3.setText("Serviço");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        ConsultarClienteMensalista_.setText("Cliente Mensalista");
+        ConsultarClienteMensalista_.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
+                ConsultarClienteMensalista_ActionPerformed(evt);
             }
         });
-        jMenu4.add(jMenuItem3);
+        jMenu3.add(ConsultarClienteMensalista_);
 
-        jMenu3.add(jMenu4);
+        ConsultarFuncionario.setText("Funcionário");
+        ConsultarFuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ConsultarFuncionarioActionPerformed(evt);
+            }
+        });
+        jMenu3.add(ConsultarFuncionario);
+
+        ConsultarGerente.setText("Gerente");
+        ConsultarGerente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ConsultarGerenteActionPerformed(evt);
+            }
+        });
+        jMenu3.add(ConsultarGerente);
+
+        ConsultarLogin_.setText("Login");
+        ConsultarLogin_.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ConsultarLogin_ActionPerformed(evt);
+            }
+        });
+        jMenu3.add(ConsultarLogin_);
 
         jMenuBar1.add(jMenu3);
 
+        jMenu6.setText("Relatório");
+
+        RelatorioMensal_.setText("Mensal");
+        RelatorioMensal_.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RelatorioMensal_ActionPerformed(evt);
+            }
+        });
+        jMenu6.add(RelatorioMensal_);
+
+        RelatorioAvulso_.setText("Avulso");
+        RelatorioAvulso_.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RelatorioAvulso_ActionPerformed(evt);
+            }
+        });
+        jMenu6.add(RelatorioAvulso_);
+
+        jMenuBar1.add(jMenu6);
+
         jMenu5.setText("Ferramentas");
+
+        AbrirCalc.setText("Calculadora");
+        AbrirCalc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AbrirCalcActionPerformed(evt);
+            }
+        });
+        jMenu5.add(AbrirCalc);
+
+        AbrirBlocoNotas_.setText("Bloco de Notas");
+        AbrirBlocoNotas_.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AbrirBlocoNotas_ActionPerformed(evt);
+            }
+        });
+        jMenu5.add(AbrirBlocoNotas_);
+
         jMenuBar1.add(jMenu5);
 
-        jMenu6.setText("Sair");
-        jMenuBar1.add(jMenu6);
+        MenuSAIR.setText("Sair");
+        MenuSAIR.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuSAIRActionPerformed(evt);
+            }
+        });
+        jMenuBar1.add(MenuSAIR);
 
         setJMenuBar(jMenuBar1);
 
@@ -182,39 +274,111 @@ public class NewSystem_Gerente extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 260, Short.MAX_VALUE))
+                .addGap(0, 381, Short.MAX_VALUE))
         );
 
-        setSize(new java.awt.Dimension(618, 422));
+        setSize(new java.awt.Dimension(795, 552));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jBSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSairActionPerformed
     System.exit(0);
     }//GEN-LAST:event_jBSairActionPerformed
 
     private void jBEntradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBEntradaActionPerformed
-        Entrada_Veiculo e = new Entrada_Veiculo();
+        Entrada_Veiculo e = new Entrada_Veiculo(null,true);
         e.setVisible(true);
     }//GEN-LAST:event_jBEntradaActionPerformed
 
     private void jBSaidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSaidaActionPerformed
-      Saida_Veiculo s = new Saida_Veiculo();
+      Saida_Veiculo s = new Saida_Veiculo(null,true);
       s.setVisible(true);
     }//GEN-LAST:event_jBSaidaActionPerformed
 
     private void jBCaixaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCaixaActionPerformed
-        
+        Caixa.Caixa_Mensalista c = new  Caixa.Caixa_Mensalista (null,true);
+        c.setVisible(true);     
     }//GEN-LAST:event_jBCaixaActionPerformed
 
     private void jBClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBClienteActionPerformed
-        Cliente_Mensalista c = new Cliente_Mensalista();
+        Cliente_Mensalista c = new Cliente_Mensalista(null,true);
         c.setVisible(true);
     }//GEN-LAST:event_jBClienteActionPerformed
+
+    private void RelatorioMensal_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RelatorioMensal_ActionPerformed
+        Relatorio.Relatorio_ClienteMensalista c = new  Relatorio.Relatorio_ClienteMensalista(null,true);
+        c.setVisible(true);
+    }//GEN-LAST:event_RelatorioMensal_ActionPerformed
+
+    private void ClienteMensalista_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClienteMensalista_ActionPerformed
+         Cliente_Mensalista c = new Cliente_Mensalista(null,true);
+        c.setVisible(true);
+    }//GEN-LAST:event_ClienteMensalista_ActionPerformed
+
+    private void Funcionario_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Funcionario_ActionPerformed
+         Cadastro.Funcionario c = new Cadastro.Funcionario(null,true);
+        c.setVisible(true);
+    }//GEN-LAST:event_Funcionario_ActionPerformed
+
+    private void GerenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GerenteActionPerformed
+         Cadastro.Gerente c = new  Cadastro.Gerente(null,true);
+         c.setVisible(true);
+    }//GEN-LAST:event_GerenteActionPerformed
+
+    private void EntradaVeiculo_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EntradaVeiculo_ActionPerformed
+       Cadastro.Entrada_Veiculo c = new  Cadastro.Entrada_Veiculo (null,true);
+         c.setVisible(true);
+    }//GEN-LAST:event_EntradaVeiculo_ActionPerformed
+
+    private void SaidaVeiculo_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaidaVeiculo_ActionPerformed
+      Cadastro.Saida_Veiculo c = new  Cadastro.Saida_Veiculo (null,true);
+         c.setVisible(true);
+    }//GEN-LAST:event_SaidaVeiculo_ActionPerformed
+
+    private void ConsultarClienteMensalista_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarClienteMensalista_ActionPerformed
+        Pesquisa.Cliente_Mensalista c = new  Pesquisa.Cliente_Mensalista (null,true);
+         c.setVisible(true);
+    }//GEN-LAST:event_ConsultarClienteMensalista_ActionPerformed
+
+    private void ConsultarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarFuncionarioActionPerformed
+        Pesquisa.Funcionario c = new   Pesquisa.Funcionario  (null,true);
+         c.setVisible(true);
+    }//GEN-LAST:event_ConsultarFuncionarioActionPerformed
+
+    private void ConsultarGerenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarGerenteActionPerformed
+     Pesquisa.Pesquisar_Gerente c = new   Pesquisa.Pesquisar_Gerente  (null,true);
+         c.setVisible(true);
+    }//GEN-LAST:event_ConsultarGerenteActionPerformed
+
+    private void ConsultarLogin_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarLogin_ActionPerformed
+        Pesquisa.Login c = new   Pesquisa.Login (null,true);
+         c.setVisible(true);
+    }//GEN-LAST:event_ConsultarLogin_ActionPerformed
+
+    private void RelatorioAvulso_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RelatorioAvulso_ActionPerformed
+      Relatorio.Relatorio_Cliente c = new  Relatorio.Relatorio_Cliente(null,true);
+        c.setVisible(true);
+    }//GEN-LAST:event_RelatorioAvulso_ActionPerformed
+
+    private void AbrirCalcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AbrirCalcActionPerformed
+        try {
+            Runtime.getRuntime().exec("calc");
+        } catch (IOException ex) {
+            JOptionPane.showInputDialog("",ex);
+        }
+    }//GEN-LAST:event_AbrirCalcActionPerformed
+
+    private void AbrirBlocoNotas_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AbrirBlocoNotas_ActionPerformed
+        try {
+            Runtime.getRuntime().exec("notepad");
+        } catch (IOException ex) {
+            JOptionPane.showInputDialog("",ex);
+        }
+    }//GEN-LAST:event_AbrirBlocoNotas_ActionPerformed
+
+    private void MenuSAIRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuSAIRActionPerformed
+          System.exit(0);
+    }//GEN-LAST:event_MenuSAIRActionPerformed
 
     /**
      * @param args the command line arguments
@@ -251,6 +415,20 @@ public class NewSystem_Gerente extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem AbrirBlocoNotas_;
+    private javax.swing.JMenuItem AbrirCalc;
+    private javax.swing.JMenuItem ClienteMensalista_;
+    private javax.swing.JMenuItem ConsultarClienteMensalista_;
+    private javax.swing.JMenuItem ConsultarFuncionario;
+    private javax.swing.JMenuItem ConsultarGerente;
+    private javax.swing.JMenuItem ConsultarLogin_;
+    private javax.swing.JMenuItem EntradaVeiculo_;
+    private javax.swing.JMenuItem Funcionario_;
+    private javax.swing.JMenuItem Gerente;
+    private javax.swing.JMenu MenuSAIR;
+    private javax.swing.JMenuItem RelatorioAvulso_;
+    private javax.swing.JMenuItem RelatorioMensal_;
+    private javax.swing.JMenuItem SaidaVeiculo_;
     private javax.swing.JButton jBCaixa;
     private javax.swing.JButton jBCliente;
     private javax.swing.JButton jBEntrada;
@@ -259,18 +437,9 @@ public class NewSystem_Gerente extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
-    private javax.swing.JMenuItem jMenuItem7;
-    private javax.swing.JMenuItem jMenuItem8;
-    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
